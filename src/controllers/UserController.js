@@ -31,6 +31,7 @@ module.exports = {
       const { params } = req;
       const user = await UserService.findOne(params.id).populate('Posts');
       user.password = undefined;
+      console.log(params);
       res.status(200).json({ message: 'Ok', payload: user });
     } catch (error) {
       next(error);

@@ -10,4 +10,26 @@ module.exports = {
       next(error);
     }
   },
+  findOne: async (req, res, next) => {
+    try {
+      const { params } = req;
+      console.log(params.id);
+      const post = await PostService.findOne(params.id);
+      res.status(200).json({ message: 'Ok', payload: post });
+    } catch (error) {
+      console.log('no');
+      next(error.message);
+    }
+  },
+  findOne: async (req, res, next) => {
+    try {
+      const { params } = req;
+      console.log(params.id);
+      const post = await PostService.findOne(params.id);
+      res.status(200).json({ message: 'Ok', payload: post });
+    } catch (error) {
+      console.log('no');
+      next(error.message);
+    }
+  },
 };
